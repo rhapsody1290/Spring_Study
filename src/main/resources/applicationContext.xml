@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <!-- 在容器文件中配置bean(service/dao/domain/action/数据源) -->
-    <!-- bean元素的作用是，当我们的spring框架加载时候，spring就会自动的创建一个bean对象,并放入内存-->
-    <bean id = "A" class="hello.A">
-        <!-- 这里就体现出注入的概念，将B对象的引用注入到A中的b属性-->
-        <property name="b" ref="B"/>
-    </bean>
-    <bean id="B" class="hello.B"/>
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
+    <!--<context:component-scan base-package="annotation"/>-->
+    <context:annotation-config></context:annotation-config>
 </beans>
